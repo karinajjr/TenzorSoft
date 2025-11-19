@@ -178,23 +178,11 @@ function all() {
                         <div className="flex  gap-[58px] items-center">
                             <div className="flex md:gap-[40px] xl:gap-[56px] text-white items-center hidden lg:flex">
                                 <button className="cursor-pointer text-[18px]">{t("navbar.home")} </button>
-
                                 <button onClick={() => scrollToSection(aboutRef)} className="cursor-pointer text-[18px]">{t("navbar.about")}</button>
-
-                                <div className="flex gap-3">
-                                    <button onClick={() => scrollToSection(servicesRef)} className="cursor-pointer text-[18px]">{t("navbar.services")}</button>
-                                    <i className="bi bi-caret-down-fill text-[8px] mt-2"></i>
-                                </div>
-
-                                <div className="flex gap-3">
-                                    <button onClick={() => scrollToSection(portfolioRef)} className="cursor-pointer text-[18px]">{t("navbar.portfolio")}</button>
-                                    <i className="bi bi-caret-down-fill text-[8px] mt-2"></i>
-                                </div>
-
+                                <button onClick={() => scrollToSection(servicesRef)} className="cursor-pointer text-[18px]">{t("navbar.services")}</button>
+                                <button onClick={() => scrollToSection(portfolioRef)} className="cursor-pointer text-[18px]">{t("navbar.portfolio")}</button>
                                 <button onClick={() => scrollToSection(certificatesRef)} className="cursor-pointer text-[18px]">{t("navbar.certificates")}</button>
-
                                 <button onClick={() => scrollToSection(contactRef)} className="cursor-pointer text-[18px]">{t("navbar.contact")}</button>
-
                             </div>
 
                             <div className="flex gap-6 items-center">
@@ -223,9 +211,9 @@ function all() {
 
                 <section id="hero" ref={homeRef} className="flex items-center text-white h-screen pt-[100px] max-w-[1440px] mx-auto px-[20px] md:px-2 lg:px-3 2xl:px-0">
                     <div className="space-y-6">
-                        <h1 className="text-5xl font-semibold">  <Trans i18nKey="hero.title" /> </h1>
-                        <p className="text-[20px]"> <Trans i18nKey="hero.description" /> </p>
-                        <button className="bg-[#0349A7] text-white w-[147px] h-[52px] rounded-xl">{t("hero.cta")}</button>
+                        <h1 className="text-6xl font-semibold">  <Trans i18nKey="hero.title" /> </h1>
+                        <p className="text-[25px]"> <Trans i18nKey="hero.description" /> </p>
+                        <button className="bg-[#0349A7] text-white w-[147px] h-[52px] rounded-xl text-lg">{t("hero.cta")}</button>
                     </div>
                 </section>
 
@@ -525,83 +513,81 @@ function all() {
                             </div>
                         </div>
 
-                        <div className=" gap-2  lg:gap-6 flex ">
-                            <div className="hidden lg:flex flex-col space-y-[16px] text-[#8D8D8D]">
-                                <h1 className="text-xl font-semibold text-white">
-                                    {t("footer.columns.template.title")}
-                                </h1>
-                                <a href="/">{t("footer.columns.template.home")}</a>
-                                <a href="/about">{t("footer.columns.template.about")}</a>
-                                <a href="/services">{t("footer.columns.template.services")}</a>
-                                <a href="/portfolio">{t("footer.columns.template.portfolio")}</a>
-                                <a href="/certificates">{t("footer.columns.template.certificates")}</a>
-                                <a href="/contact">{t("footer.columns.template.contact")}</a>
-                            </div>
-
-                            <div className="hidden lg:flex flex-col space-y-[16px] text-[#8D8D8D]">
-                                <h1 className="text-xl font-semibold text-white">Services</h1>
-                                <a href="">{t("footer.columns.services.software")}</a>
-                                <a href="">{t("footer.columns.services.1cProduction")}</a>
-                                <a href="">{t("footer.columns.services.bitrix")}</a>
-                                <a href="">{t("footer.columns.services.antivirus")}</a>
-                                <a href="">{t("footer.columns.services.automation")}</a>
-                                <a href="">{t("footer.columns.services.biometric")}</a>
-                                <a href="">{t("footer.columns.services.itservices")}</a>
-                            </div>
-
-                            <div className="hidden lg:flex flex-col space-y-[16px] text-[#8D8D8D]">
-                                <h1 className="text-xl font-semibold text-white">
-                                    {t("footer.columns.contact.title")}
-                                </h1>
-                                <p>Tashkent city Mirabad <br /> district st. Magtymguly</p>
-                                <span>+998(75) 556-56-56</span>
-                                <p>contact@techsolution.com</p>
-                            </div>
-                        </div>
-
-                  <div className="space-y-3">
-                          {/* фак */}
-                        <div className="block lg:hidden w-full">
-                            <div className="space-y-4">
-                                {faqs.map((faq, index) => (
-                                    <div key={index} className="border border-gray-200 rounded-lg shadow-sm">
-                                        <button className="text-left px-4 py-3 flex justify-between items-center w-full  md:w-[420px]" onClick={() => toggleIndex(index)} >
-                                            <span className="font-medium">{faq.question}</span>
-                                            <span className="text-xl">
-                                                {openIndex === index
-                                                    ? <i className="bi bi-chevron-up"></i>
-                                                    : <i className="bi bi-chevron-down"></i>}
-                                            </span>
-                                        </button>
-
-                                        {openIndex === index && (
-                                            <div className="px-4 pb-4 pt-2 space-y-2">
-                                                {faq.answers.map((ans, i) => (
-                                                    <button key={i} onClick={() => {
-                                                        navigate(ans?.link || "/");
-                                                        ans.ref?.current?.scrollIntoView({ behavior: "smooth" });
-                                                    }} className="flex flex-col text-white py-2 text-start">
-                                                        {ans.text}
-                                                    </button>
-                                                ))}
-                                            </div>
-                                        )}
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                        {/* сабскрай */}
-                        <div className="flex flex-col space-y-[16px] text-[#8D8D8D]">
+                        <div className="hidden lg:flex flex-col space-y-[16px] text-[#8D8D8D]">
                             <h1 className="text-xl font-semibold text-white">
-                                {t("footer.subscribeHeading")}
+                                {t("footer.columns.template.title")}
                             </h1>
-                            <input type="text" id="name" placeholder={t("footer.subscribePlaceholder")} className="md:w-[420px] lg:w-[200px] xl:w-[320px] h-[48px] px-4 py-2 border border-[#8D8D8D] rounded-lg"/>
-                            <button className="md:w-[420px] lg:w-[200px] xl:w-[320px] h-[52px] bg-[#0349A7] border border-[#0349A7] rounded-[12px] font-medium text-white text-lg">
-                                {t("footer.subscribeCta")}
-                            </button>
+                            <a href="/">{t("footer.columns.template.home")}</a>
+                            <a href="/about">{t("footer.columns.template.about")}</a>
+                            <a href="/services">{t("footer.columns.template.services")}</a>
+                            <a href="/portfolio">{t("footer.columns.template.portfolio")}</a>
+                            <a href="/certificates">{t("footer.columns.template.certificates")}</a>
+                            <a href="/contact">{t("footer.columns.template.contact")}</a>
                         </div>
 
-                  </div>
+                        <div className="hidden lg:flex flex-col space-y-[16px] text-[#8D8D8D]">
+                            <h1 className="text-xl font-semibold text-white">Services</h1>
+                            <a href="">{t("footer.columns.services.software")}</a>
+                            <a href="">{t("footer.columns.services.1cProduction")}</a>
+                            <a href="">{t("footer.columns.services.bitrix")}</a>
+                            <a href="">{t("footer.columns.services.antivirus")}</a>
+                            <a href="">{t("footer.columns.services.automation")}</a>
+                            <a href="">{t("footer.columns.services.biometric")}</a>
+                            <a href="">{t("footer.columns.services.itservices")}</a>
+                        </div>
+
+                        <div className="hidden lg:flex flex-col space-y-[16px] text-[#8D8D8D]">
+                            <h1 className="text-xl font-semibold text-white">
+                                {t("footer.columns.contact.title")}
+                            </h1>
+                            <p>Tashkent city Mirabad <br /> district st. Magtymguly</p>
+                            <span>+998(75) 556-56-56</span>
+                            <p>contact@techsolution.com</p>
+                        </div>
+
+                        <div className="space-y-3">
+                            {/* фак */}
+                            <div className="block lg:hidden w-full">
+                                <div className="space-y-4">
+                                    {faqs.map((faq, index) => (
+                                        <div key={index} className="border border-gray-200 rounded-lg shadow-sm">
+                                            <button className="text-left px-4 py-3 flex justify-between items-center w-full  md:w-[420px]" onClick={() => toggleIndex(index)} >
+                                                <span className="font-medium">{faq.question}</span>
+                                                <span className="text-xl">
+                                                    {openIndex === index
+                                                        ? <i className="bi bi-chevron-up"></i>
+                                                        : <i className="bi bi-chevron-down"></i>}
+                                                </span>
+                                            </button>
+
+                                            {openIndex === index && (
+                                                <div className="px-4 pb-4 pt-2 space-y-2">
+                                                    {faq.answers.map((ans, i) => (
+                                                        <button key={i} onClick={() => {
+                                                            navigate(ans?.link || "/");
+                                                            ans.ref?.current?.scrollIntoView({ behavior: "smooth" });
+                                                        }} className="flex flex-col text-white py-2 text-start">
+                                                            {ans.text}
+                                                        </button>
+                                                    ))}
+                                                </div>
+                                            )}
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                            {/* сабскрай */}
+                            <div className="flex flex-col space-y-[16px] text-[#8D8D8D]">
+                                <h1 className="text-xl font-semibold text-white">
+                                    {t("footer.subscribeHeading")}
+                                </h1>
+                                <input type="text" id="name" placeholder={t("footer.subscribePlaceholder")} className="md:w-[420px] lg:w-[200px] xl:w-[320px] h-[48px] px-4 py-2 border border-[#8D8D8D] rounded-lg" />
+                                <button className="md:w-[420px] lg:w-[200px] xl:w-[320px] h-[52px] bg-[#0349A7] border border-[#0349A7] rounded-[12px] font-medium text-white text-lg">
+                                    {t("footer.subscribeCta")}
+                                </button>
+                            </div>
+
+                        </div>
                     </div>
 
                     <div className="space-y-3 md:space-y-[40px] text-[#8D8D8D]">

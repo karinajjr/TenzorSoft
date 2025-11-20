@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import LanguageSelector from "./LanguageSelector";
 import { useTranslation } from "react-i18next";
 import { Trans } from "react-i18next";
+import Partners from "./partners";
 
 const BOT_TOKEN = "8565375529:AAGecSewxKBWrMBUYWwxEukIEuCch7Px5fw";
 const CHAT_ID = "-1003257673634";
@@ -221,15 +222,15 @@ function all() {
 
             <main className=" ">
 
-                {/* <section id="partners" className=" max-w-[1440px] mx-auto m-8">
-                    partners
-                </section> */}
+                <section id="partners" className="  my-8">
+                    <Partners/>
+                </section>
 
                 <section ref={aboutRef} id="AboutUs" className=" bg-gradient-to-b from-[#0348A408] to-white flex">
                     <div className="max-w-[1440px]  mx-auto space-y-[40px] md:space-y-[120px] my-[80px] px-[20px] md:px-2 lg:px-3 2xl:px-0">
                         <div className="space-y-4 items-center justify-center flex flex-col text-center">
-                            <button className="rounded-full text-[#0349A7] font-medium bg-[#E8F2FF] flex gap-3 w-[184px] md:w-[220px] h-[50px] md:h-[55px] text-center justify-center items-center">
-                                <img src="/logo/aboutUs.png" className="w-[20px]" />
+                            <button className="rounded-full text-[#0349A7] font-medium bg-[#E8F2FF] flex gap-3 w-[220px] h-[50px] md:h-[55px] text-center justify-center items-center">
+                                <img src="/logo/aboutUs.png" className="w-[24px]" />
                                 <h1 className="text-2xl"> {t("aboutSection.badge")}</h1>
                             </button>
                             <h1 className=" font-semibold text-[28px] md:text-4xl w-[335px] md:w-[560px]">{t("aboutSection.title")}</h1>
@@ -595,8 +596,8 @@ function all() {
                             <div className="block lg:hidden w-full">
                                 <div className="space-y-4">
                                     {faqs.map((faq, index) => (
-                                        <div key={index} className="border border-gray-200 rounded-lg shadow-sm">
-                                            <button className="text-left px-4 py-3 flex justify-between items-center w-full  md:w-[420px]" onClick={() => toggleIndex(index)} >
+                                        <div key={index} className="border-b border-gray-200 shadow-sm">
+                                            <button className="text-left px-1 py-3 flex justify-between items-center w-full  md:w-[420px]" onClick={() => toggleIndex(index)} >
                                                 <span className="font-medium">{faq.question}</span>
                                                 <span className="text-xl">
                                                     {openIndex === index
@@ -638,8 +639,8 @@ function all() {
                     <div className="space-y-3 md:space-y-[40px] text-[#8D8D8D]">
                         <hr className="border-t border-[#8D8D8D80]" />
                         <div className="flex flex-col justify-between md:flex-row space-y-4 md:space-y-0 text-center">
-                            <p className="sm:w-[380px]">{t("footer.rights")}</p>
-                            <div className="flex gap-[100px] md:gap-[60px]">
+                            <p className="">{t("footer.rights")}</p>
+                            <div className="flex items-center justify-center gap-[100px] md:gap-[60px]">
                                 <p>{t("footer.terms")}</p>
                                 <p>{t("footer.privacy")}</p>
                             </div>

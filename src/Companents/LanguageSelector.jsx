@@ -20,7 +20,7 @@ export default function LanguageSelector() {
 
     return (
         <div className="relative inline-block">
-            <button onClick={() => setOpen(!open)} className=" text-white rounded-[8px] w-[65px] h-[29px] text-[18px] p-2 flex gap-2 items-center" >
+            <button onClick={() => setOpen(!open)} className=" text-white rounded-[8px] w-[40px] h-[29px] text-[18px] p-2 flex gap-2 items-center" >
                 {currentLang.label}
             </button>
 
